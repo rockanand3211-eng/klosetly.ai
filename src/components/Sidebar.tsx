@@ -31,7 +31,7 @@ export function Sidebar({ activeItem, collection, onNavigate }: SidebarProps) {
           </div>
           <div>
             <h1 className="text-lg font-semibold tracking-tight text-white">
-              Style.AI
+              DripVerse.AI
             </h1>
             <p className="text-[10px] font-medium uppercase tracking-widest text-slate-500">
               Fashion Intelligence

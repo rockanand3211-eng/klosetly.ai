@@ -1,4 +1,4 @@
-import type { CollectionGender, ProductCategory } from '../types'
+import type { CollectionGender, Outfit, ProductCategory } from '../types'
 import { ProductGrid } from './ProductGrid'
 import { TrendingStyleBanner } from './TrendingStyleBanner'
 import { UploadSection } from './UploadSection'
@@ -8,6 +8,12 @@ interface HomeViewProps {
   onCollectionChange: (gender: CollectionGender) => void
   category: ProductCategory
   onCategoryChange: (category: ProductCategory) => void
+  isProfileComplete?: boolean
+  onAddToBag: (outfit: Outfit) => void
+  onUploadPreprocessComplete: () => void
+  variant?: 'default' | 'luxury'
+  /** Hide upload block when shown inside AI Stylist lock card */
+  showUpload?: boolean
 }
 
 export function HomeView({
@@ -15,17 +21,29 @@ export function HomeView({
   onCollectionChange,
   category,
   onCategoryChange,
+  isProfileComplete = false,
+  onAddToBag,
+  onUploadPreprocessComplete,
+  variant = 'default',
+  showUpload = true,
 }: HomeViewProps) {
   return (
     <>
-      <UploadSection />
-      <TrendingStyleBanner />
+      {showUpload && (
+        <UploadSection
+          variant={variant === 'luxury' ? 'luxury' : 'default'}
+          onPreprocessComplete={onUploadPreprocessComplete}
+        />
+      )}
+      {variant === 'default' && <TrendingStyleBanner />}
       <ProductGrid
         gender={collection}
         onGenderChange={onCollectionChange}
         category={category}
         onCategoryChange={onCategoryChange}
         showHeader
+        isProfileComplete={isProfileComplete}
+        onAddToBag={onAddToBag}
       />
     </>
   )
