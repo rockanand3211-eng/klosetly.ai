@@ -85,15 +85,36 @@ export function LuxuryProductCard({
       </div>
 
       {isThrift ? (
-        <button
-          type="button"
-          onClick={() => onAction?.(product)}
-          className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-[#A3BCAB] py-3 text-sm font-semibold text-[#1E293B] transition-opacity hover:opacity-90"
-          aria-label={`List ${product.name} on thrift marketplace`}
-        >
-          <ThriftItIcon className="h-4 w-4 shrink-0" />
-          <span>thriftIt</span>
-        </button>
+        <div className="mt-4 flex items-center justify-between gap-3 font-sans">
+          {/* ThriftIt Button on the left */}
+          <button
+            type="button"
+            onClick={() => onAction?.(product)}
+            className="flex items-center justify-center gap-1.5 rounded-full bg-[#A3BCAB] px-3.5 py-2.5 text-xs font-semibold text-[#1E293B] transition-opacity hover:opacity-90 shrink-0"
+            aria-label={`List ${product.name} on thrift marketplace`}
+          >
+            <ThriftItIcon className="h-3.5 w-3.5 shrink-0" />
+            <span>thriftIt</span>
+          </button>
+
+          {/* Utilization Score Widget on the right */}
+          <div className="flex-1 min-w-0 flex flex-col gap-1">
+            <span className="text-[11px] font-bold text-[#1E293B] truncate">
+              Utilization Score
+            </span>
+            <div className="flex items-center gap-1.5">
+              <div className="h-1.5 flex-1 rounded-full bg-slate-100 dark:bg-neutral-800 overflow-hidden min-w-[40px]">
+                <div
+                  className="h-full rounded-full bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500"
+                  style={{ width: '25%' }}
+                />
+              </div>
+              <span className="text-[9px] text-[#64748B] font-medium whitespace-nowrap shrink-0">
+                Idle (30 Days Unworn)
+              </span>
+            </div>
+          </div>
+        </div>
       ) : (
         <button
           type="button"

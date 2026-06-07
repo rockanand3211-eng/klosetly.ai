@@ -1,0 +1,99 @@
+Slide 1: Title Slide (The Hook)
+Slide Title: KLOSETLY
+
+Subtitle: Rethinking Personal Wardrobes through AI Styling and Sustainable Thrifting.
+
+Visual Suggestion: Keep the premium deep forest green background with the minimalist wire-hanger logo layout from your design mockup.
+
+Presenter Note: "Good morning everyone. Today, we are introducing Closetly—a platform that solves the two biggest frustrations of modern fashion consumers: choice paralysis and wardrobe waste."
+
+🛝 Slide 2: The Core Problems (Dual-Threat Problem Statement)
+Slide Title: The Modern Wardrobe Crisis
+
+Bullet Points:
+
+The Fit & Styling Dilemma: 80% of consumers struggle to find their exact style fit or match outfits efficiently, leading to high product returns and styling anxiety.
+
+The Dead Wardrobe Burden: Millions of tons of high-quality clothes sit unworn in personal closets, with no seamless mechanism to list, declutter, or recycle them efficiently.
+
+Key Stat Callout: "Average consumers wear only 20% of their wardrobe regularly, leaving 80% as dead capital."
+
+🛝 Slide 3: The Solution (Introducing Closetly)
+Slide Title: Enter Closetly: Your Virtual Ecosystem
+
+Core Pillars:
+
+Curated AI Stylist: A personalized computer vision module that takes user traits/photos to instantly design flawless outfit combinations from top brands.
+
+The Circular Loop: An embedded, single-click checkout framework where retail items live side-by-side with individual peer-to-peer personal listings.
+
+🛝 Slide 4: Unique Value Proposition (The Dynamic Grid Innovation)
+Slide Title: Dual-Intent Interface Design
+
+Layout Breakdown:
+
+The 'Shop All' Grid: Seamless retail experience showing curated premium sets with an instant "Buy Now" checkout action.
+
+The 'My Closet' Workspace: A digital twin of the user's real wardrobe. If an item is sitting idle, the interface displays an instant integrated "thriftIt" button to monetize old clothes instantly into the secondary marketplace ecosystem.
+
+🛝 Slide 5: Product Walkthrough (Frontend Architecture)
+Slide Title: Product UI Architecture
+
+Content Sections:
+
+Luxury Aesthetics: Minimalist Scandinavian layout with high-contrast serif typography paired with geometric utility headers.
+
+Glassmorphic Interfaces: Immersive layered blur wrappers keeping focus centered on real editorial outfit imagery featuring handsome, dashing fits.
+
+Interactive Controls: Single-pill toggle switchers enabling users to browse collections vs. uploading their own custom garments into the core system layout instantly.
+
+🛝 Slide 6: The AI Edge (Personalized Styling Module)
+Slide Title: ✨ Unlocking the AI Stylist
+
+Key Features:
+
+Smart Closet Uploads: Users snap photos of clothes or their face/physique to generate automated style maps.
+
+90%+ Match Vectors: Real-time data mining loops tracking global fashion styles, predicting trends, and suggesting exact coordinates (e.g., The Copenhagen Minimalist, Tokyo Street Edge).
+
+🛝 Slide 7: Market Opportunity (Why Now?)
+Slide Title: Market Size & Tailwinds
+
+Data Points:
+
+TAM (Total Addressable Market): Global AI in Fashion & Re-commerce/Thrifting platforms market.
+
+The Sustainability Pivot: Gen-Z and Millennial buyers are migrating rapidly toward circular fashion loops and conscious secondary marketplaces.
+
+The Fit Gap: E-commerce stores lose millions annually due to blind item size returns—AI curation cuts this return overhead drastically.
+
+🛝 Slide 8: Business Model (How We Monetize)
+Slide Title: The SaaS + Transaction Engine
+
+Revenue Streams:
+
+SaaS Tiers (Subscription): Basic wardrobe tracking is free. Unlimited virtual styling pipelines and premium '✨ AI Stylist' matching requires a monthly tier.
+
+Marketplace Commission: Taking a small, fixed transaction commission on every user asset listed and sold via the "thriftIt" action network.
+
+Brand Affiliate Partnerships: Revenue generated via contextual high-end fashion affiliate redirects.
+
+🛝 Slide 9: Tech Stack Validation
+Slide Title: Robust Full-Stack Engineering
+
+Architecture Components:
+
+Frontend Ecosystem: React.js / Next.js structured seamlessly with a clean, fully customized utility system via Tailwind CSS.
+
+Backend & Data Layer: Node.js framework backed by Express endpoints paired with schema tracking under MongoDB cluster nodes.
+
+Processing Core: Vision algorithms tracking multi-variable items, matching colors, tags, styles, and custom attributes instantly.
+
+🛝 Slide 10: The Ask & Call To Action
+Slide Title: Build the Future of Conscious Fashion
+
+Closing Statement: Joining hands to transition personal fashion from consumer clutter into a fluid, sustainable, and highly personalized service ecosystem.
+
+Footer Details: Anand Raj | Contact Info | Closetly.ai
+
+Presenter Note: "Thank you. I am now open to your questions about Closetly’s system architecture and scalability roadmaps.

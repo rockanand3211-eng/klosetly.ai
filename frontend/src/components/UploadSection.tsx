@@ -127,18 +127,24 @@ export function UploadSection({
       <div
         onDragOver={(event) => event.preventDefault()}
         onDrop={handleDrop}
-        className={`relative w-full overflow-hidden rounded-2xl border border-dashed transition-all duration-300 ease-in-out ${
-          isEmbedded
-            ? 'px-5 py-6 text-center sm:px-6 sm:py-7'
-            : 'px-6 py-8 sm:px-8 sm:py-10'
-        } ${
-          isLuxury
+        className={`relative w-full overflow-hidden transition-all duration-300 ease-in-out ${
+          isEmbedded && isLuxury
             ? isPreprocessing
-              ? 'border-[#2C4A3F]/40 bg-[#F5F7F6] shadow-[0px_12px_24px_rgba(44,74,63,0.06)]'
-              : 'border-[#2C4A3F]/25 bg-[#F5F7F6]/80 hover:border-[#2C4A3F]/40 hover:bg-[#F5F7F6]'
-            : isPreprocessing
-              ? 'border-[#00F0A0]/40 bg-slate-800/90 shadow-[0_0_32px_rgba(0,240,160,0.08)]'
-              : 'border-slate-700 bg-slate-800/50 hover:border-emerald-500/30 hover:bg-slate-800/80'
+              ? 'border-dashed border-2 border-[#2C4A3F]/40 bg-white/50 shadow-[0px_12px_24px_rgba(44,74,63,0.06)] rounded-[1.5rem] p-6 text-center'
+              : 'border-dashed border-2 border-[#234233]/20 bg-white/20 rounded-[1.5rem] p-6 text-center'
+            : `border border-dashed rounded-2xl ${
+                isEmbedded
+                  ? 'px-5 py-6 text-center sm:px-6 sm:py-7'
+                  : 'px-6 py-8 sm:px-8 sm:py-10'
+              } ${
+                isLuxury
+                  ? isPreprocessing
+                    ? 'border-[#2C4A3F]/40 bg-white/50 shadow-[0px_12px_24px_rgba(44,74,63,0.06)]'
+                    : 'border-emerald-900/20 bg-white/50 hover:border-[#2C4A3F]/40 hover:bg-white/70'
+                  : isPreprocessing
+                    ? 'border-[#00F0A0]/40 bg-slate-800/90 shadow-[0_0_32px_rgba(0,240,160,0.08)]'
+                    : 'border-slate-700 bg-slate-800/50 hover:border-emerald-500/30 hover:bg-slate-800/80'
+              }`
         }`}
         role={isPreprocessing ? 'status' : undefined}
         aria-live={isPreprocessing ? 'polite' : undefined}
@@ -216,69 +222,98 @@ export function UploadSection({
                 : undefined
             }
           >
-            {!isEmbedded && (
-              <div
-                className={`mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full ${
-                  isLuxury
-                    ? 'bg-[#2C4A3F]/10 ring-1 ring-[#2C4A3F]/25'
-                    : 'bg-emerald-500/15 ring-1 ring-emerald-500/30'
-                }`}
-              >
-                <Upload
-                  className={`h-9 w-9 ${isLuxury ? 'text-[#2C4A3F]' : 'text-emerald-400'}`}
-                  strokeWidth={1.5}
-                />
-              </div>
+            {isEmbedded && isLuxury ? (
+              <>
+                <h3 className="font-sans text-[15px] font-semibold text-[#234233] tracking-wide mb-3">
+                  Upload Your Photo
+                </h3>
+                <Camera className="mx-auto mb-4 h-8 w-8 text-[#234233]" strokeWidth={1.5} />
+                <div className="flex items-center justify-center gap-3">
+                  <button
+                    type="button"
+                    onClick={() => inputRef.current?.click()}
+                    className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#234233] px-5 py-2.5 text-xs font-semibold text-white shadow-sm transition-all hover:bg-[#1a3327] hover:scale-105"
+                  >
+                    <Upload className="h-3.5 w-3.5" />
+                    <span>Choose File</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => inputRef.current?.click()}
+                    className="inline-flex items-center justify-center gap-1.5 rounded-full border border-[#234233]/25 bg-white px-5 py-2.5 text-xs font-semibold text-[#234233] shadow-sm transition-all hover:bg-[#234233]/5 hover:scale-105"
+                  >
+                    <Camera className="h-3.5 w-3.5" />
+                    <span>Take Photo</span>
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                {!isEmbedded && (
+                  <div
+                    className={`mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full ${
+                      isLuxury
+                        ? 'bg-[#2C4A3F]/10 ring-1 ring-[#2C4A3F]/25'
+                        : 'bg-emerald-505/15 ring-1 ring-emerald-505/30'
+                    }`}
+                  >
+                    <Upload
+                      className={`h-9 w-9 ${isLuxury ? 'text-[#2C4A3F]' : 'text-emerald-400'}`}
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                )}
+
+                <h3
+                  className={`font-sans text-lg font-semibold sm:text-xl ${
+                    isLuxury ? 'text-[#1E293B]' : 'text-white'
+                  }`}
+                >
+                  Upload Your Photo
+                </h3>
+                <p
+                  className={`mt-2 max-w-sm font-sans text-sm leading-relaxed ${
+                    isLuxury ? 'text-[#64748B]' : 'text-slate-400'
+                  }`}
+                >
+                  Drop your image here or click to browse
+                </p>
+                <p
+                  className={`mt-1 font-sans text-[10px] font-medium tracking-widest ${
+                    isLuxury ? 'text-[#94A3B8]' : 'text-slate-500'
+                  }`}
+                >
+                  SUPPORTS JPG, PNG UP TO 10MB
+                </p>
+
+                <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+                  <button
+                    type="button"
+                    onClick={() => inputRef.current?.click()}
+                    className={`inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-transparent px-5 py-2.5 font-sans text-sm font-semibold whitespace-nowrap transition-colors ${
+                      isLuxury
+                        ? 'bg-[#2C4A3F] text-white hover:bg-[#243d34]'
+                        : 'bg-emerald-50 text-slate-950 hover:bg-emerald-400'
+                    }`}
+                  >
+                    <Upload className="h-4 w-4 shrink-0" aria-hidden />
+                    Choose File
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => inputRef.current?.click()}
+                    className={`inline-flex shrink-0 items-center justify-center gap-2 rounded-full border px-5 py-2.5 font-sans text-sm font-semibold whitespace-nowrap transition-colors ${
+                      isLuxury
+                        ? 'border-[#2C4A3F] bg-white text-[#2C4A3F] hover:bg-[#2C4A3F]/5'
+                        : 'border-slate-600 bg-slate-800 text-slate-300 hover:border-slate-500 hover:bg-slate-700 hover:text-white'
+                    }`}
+                  >
+                    <Camera className="h-4 w-4 shrink-0" aria-hidden />
+                    Take Photo
+                  </button>
+                </div>
+              </>
             )}
-
-            <h3
-              className={`font-sans text-lg font-semibold sm:text-xl ${
-                isLuxury ? 'text-[#1E293B]' : 'text-white'
-              }`}
-            >
-              Upload Your Photo
-            </h3>
-            <p
-              className={`mt-2 max-w-sm font-sans text-sm leading-relaxed ${
-                isLuxury ? 'text-[#64748B]' : 'text-slate-400'
-              }`}
-            >
-              Drop your image here or click to browse
-            </p>
-            <p
-              className={`mt-1 font-sans text-[10px] font-medium tracking-widest ${
-                isLuxury ? 'text-[#94A3B8]' : 'text-slate-500'
-              }`}
-            >
-              SUPPORTS JPG, PNG UP TO 10MB
-            </p>
-
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-              <button
-                type="button"
-                onClick={() => inputRef.current?.click()}
-                className={`inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-transparent px-5 py-2.5 font-sans text-sm font-semibold whitespace-nowrap transition-colors ${
-                  isLuxury
-                    ? 'bg-[#2C4A3F] text-white hover:bg-[#243d34]'
-                    : 'bg-emerald-500 text-slate-950 hover:bg-emerald-400'
-                }`}
-              >
-                <Upload className="h-4 w-4 shrink-0" aria-hidden />
-                Choose File
-              </button>
-              <button
-                type="button"
-                onClick={() => inputRef.current?.click()}
-                className={`inline-flex shrink-0 items-center justify-center gap-2 rounded-full border px-5 py-2.5 font-sans text-sm font-semibold whitespace-nowrap transition-colors ${
-                  isLuxury
-                    ? 'border-[#2C4A3F] bg-white text-[#2C4A3F] hover:bg-[#2C4A3F]/5'
-                    : 'border-slate-600 bg-slate-800 text-slate-300 hover:border-slate-500 hover:bg-slate-700 hover:text-white'
-                }`}
-              >
-                <Camera className="h-4 w-4 shrink-0" aria-hidden />
-                Take Photo
-              </button>
-            </div>
           </div>
         )}
       </div>

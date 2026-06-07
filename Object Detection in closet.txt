@@ -1,0 +1,20 @@
+Step 1: Object Detection & Masking (The Segmentation Layer)
+How it works: Jab rough ya individual closet photo backend par aati hai, tab hum YOLOv8 (You Only Look Once) ya ek custom-finetuned Mask R-CNN framework run karte hain.
+
+The Action: Ye model pure photo ke andar se alag-alag coordinates dhoondhta hai. Agar closet mein 1 jacket aur 1 jeans latki hain, toh ye dono ke upar boundary boxes (X, Y layout coordinates) create karke unhe separate image crops me isolate kar deta hai.
+
+🔹 Step 2: Feature & Attribute Extraction (The Classification Layer)
+How it works: Isolate hue cropped elements ko ek Convolutional Neural Network (CNN) jaise ResNet-50 ya CLIP (by OpenAI) engine se pass kiya jata hai.
+
+The Action: Ye engine kapde ke deep visual markers ko analyze karta hai aur use key-value text tags me translate kar deta hai:
+
+Category: Solid Overcoat
+
+Primary Color: Deep Olive Green
+
+Texture/Fabric: Wool Blend
+
+Style Token: Minimalist Winter / Corporate-Casual
+
+🔹 Step 3: Array Generation & Storage (The Database Sync)
+How it works: Saare text tags aur attributes ko vector clusters me map karke hum MongoDB Atlas Vector Search pipeline ke through ek schema dynamic JSON array bana dete hain.

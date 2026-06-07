@@ -8,6 +8,9 @@ export type AppView =
   | 'notification'
   | 'wishlist'
   | 'ai-stylist'
+  | 'wallet'
+  | 'thriftbag'
+  | 'rewards'
 
 /** @deprecated Use AppView — kept for gradual migration */
 export type LuxuryNavRoute = AppView
